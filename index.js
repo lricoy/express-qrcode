@@ -1,4 +1,5 @@
 const { promisify } = require('util')
+const PORT = process.env.PORT || 3000
 
 // QRCode generation requirements
 const QRCode = require('qrcode')
@@ -32,7 +33,7 @@ app.post('/', async (req, res) => {
 })
 
 app.listen(
-    process.env.NODE_PORT || 3000,
+    PORT,
     () => {
         console.log('Server is running')
     }
