@@ -1,4 +1,5 @@
 const { promisify } = require('util')
+const cors = require('cors')
 const PORT = process.env.PORT || 3000
 
 // QRCode generation requirements
@@ -12,6 +13,7 @@ const express = require('express')
 // Configure Express app
 const app = express()
 app.use(bodyParser.json())
+app.use(cors())
 
 /**
  * Receives a POST request with a body that contains a 'payload' attribute
